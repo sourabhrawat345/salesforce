@@ -169,11 +169,11 @@ public abstract class BaseSalesforceBatchSourceETLTest extends BaseSalesforceETL
     ImmutableMap.Builder<String, String> propsBuilder = getBaseProperties(REFERENCE_NAME);
 
     if (whiteList != null) {
-      propsBuilder.put(SalesforceSourceConstants.PROPERTY_WHITE_LIST, whiteList);
+      propsBuilder.put(SalesforceSourceConstants.PROPERTY_ALLOW_LIST, whiteList);
     }
 
     if (blackList != null) {
-      propsBuilder.put(SalesforceSourceConstants.PROPERTY_BLACK_LIST, blackList);
+      propsBuilder.put(SalesforceSourceConstants.PROPERTY_DENY_LIST, blackList);
     }
 
     return getPipelineResults(propsBuilder.build(), SalesforceBatchMultiSource.NAME, "SalesforceBatchMulti");

@@ -21,6 +21,7 @@ import com.sforce.ws.ConnectorConfig;
 import io.cdap.plugin.salesforce.authenticator.Authenticator;
 import io.cdap.plugin.salesforce.authenticator.AuthenticatorCredentials;
 import io.cdap.plugin.salesforce.plugin.OAuthInfo;
+import io.cdap.plugin.salesforce.plugin.source.batch.SalesforceSourceConfig;
 import org.apache.hadoop.conf.Configuration;
 
 /**
@@ -40,6 +41,22 @@ public class SalesforceConnectionUtil {
     throws ConnectionException {
     ConnectorConfig connectorConfig = Authenticator.createConnectorConfig(credentials);
     return new PartnerConnection(connectorConfig);
+  }
+
+  /**
+   * Creates {@link AuthenticatorCredentials} instance based on given parameters.
+   *
+   * @param username Salesforce username
+   * @param password Salesforce password
+   * @param consumerKey Salesforce consumer key
+   * @param consumerSecret Salesforce consumer secret
+   * @param loginUrl Salesforce authentication url
+   * @return authenticator credentials
+   */
+  public static AuthenticatorCredentials getAuthenticatorCredentials(String username, String password,
+                                                                     String consumerKey, String consumerSecret,
+                                                                     String loginUrl) {
+    return new AuthenticatorCredentials(username, password, consumerKey, consumerSecret, loginUrl);
   }
 
   /**

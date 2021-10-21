@@ -35,9 +35,11 @@ public class SalesforceSourceConstants {
   public static final String PROPERTY_PK_CHUNK_ENABLE_NAME = "enablePKChunk";
   public static final String PROPERTY_CHUNK_SIZE_NAME = "chunkSize";
   public static final String PROPERTY_PARENT_NAME = "parent";
+  public static final String PROPERTY_BULK_CONNECTION = "bulkConnection";
+  public static final String PROPERTY_JOB_ID = "jobId";
 
-  public static final String PROPERTY_WHITE_LIST = "whiteList";
-  public static final String PROPERTY_BLACK_LIST = "blackList";
+  public static final String PROPERTY_ALLOW_LIST = "whiteList";
+  public static final String PROPERTY_DENY_LIST = "blackList";
   public static final String PROPERTY_SOBJECT_NAME_FIELD = "sObjectNameField";
 
   public static final String CONFIG_QUERIES = "mapred.salesforce.input.queries";

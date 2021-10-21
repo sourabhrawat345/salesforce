@@ -51,13 +51,13 @@ public class SalesforceMultiSourceConfig extends SalesforceBaseSourceConfig {
 
   public static final String SOBJECT_NAME_FIELD_DEFAULT = "tablename";
 
-  @Name(SalesforceSourceConstants.PROPERTY_WHITE_LIST)
+  @Name(SalesforceSourceConstants.PROPERTY_ALLOW_LIST)
   @Macro
   @Nullable
   @Description("List of SObjects to fetch from Salesforce. By default all SObjects will be white listed")
   private String whiteList;
 
-  @Name(SalesforceSourceConstants.PROPERTY_BLACK_LIST)
+  @Name(SalesforceSourceConstants.PROPERTY_DENY_LIST)
   @Macro
   @Nullable
   @Description("List of SObjects NOT to fetch from Salesforce. By default NONE of SObjects will be black listed")
